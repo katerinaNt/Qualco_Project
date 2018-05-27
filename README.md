@@ -21,8 +21,13 @@ The Portal will contain the following screens:
 
 
 1 Every day at 04:00, the City's Main System creates and saves onto the Hard Drive a text file containing (in a specified format) a list of customers and their unpaid bills. The Portal fetches that file and processes it as follows:
-2 A list of unique citizens is extracted. If a citizen does not exist in the portal, a new user is created with username his Tax Number (AFM) and a dummy password. An email is sent to the customer, inviting him to login into the portal. If the citizen exists, no operation is performed.
-3 The list of bills is deleted and the new list is inserted.
-4 Every night at midnight, two text files are extracted and saved onto the Hard Drive.
-5 List of payments performed.
-6 List of Settlement requests.
+
+  A list of unique citizens is extracted. If a citizen does not exist in the portal, a new user is created with username his Tax Number (AFM) and a dummy password. An email is sent to the customer, inviting him to login into the portal. If the citizen exists, no operation is performed.
+  
+ The list of bills is deleted and the new list is inserted.
+ 
+2 Every night at midnight, two text files are extracted and saved onto the Hard Drive.
+
+  List of payments performed.
+  
+  List of Settlement requests.
