@@ -1,0 +1,84 @@
+﻿@model IEnumerable<QualcoOne.Models.Bill>
+
+@{
+    ViewData["Title"] = "Λογαριασμοί Πολίτη";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ <!-- debt Subpage -->
+<section class="pt-page pt-page-3 table pt-page-current" data-id="debt">
+    <div class="border-block-top-110"></div>
+    <div class="section-inner">
+        <div class="section-title-block">
+            <div class="section-title-wrapper">
+                <div class="app-logo"><img src="~/images/logo2.png" class="img-responsive" /></div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 subpage-block" style="margin-top:30px;">
+                <ul class="nav nav-pills">
+                    <li>
+                        @Html.ActionLink("Ανεξόφλητοι", "Bills", "Home", null, new { @class = "pill-marg" })
+                    </li>
+                    <li>
+                        @Html.ActionLink("Εξοφλημένοι", "Payments", "Home", null, new { @class = "pill-marg" })
+                    </li>
+                    <li class="active">
+                        @Html.ActionLink("Προς Διακανονισμό", "Settlements", "Home", null)
+                    </li>
+                </ul>
+                        <div class="tab-content">
+
+                            @if (!Model.Any())
+                            {
+                                <br>
+                                <p>Δεν υπάρχουν λογαριασμοί προς διακανονισμό</p>
+                            }
+                            else
+                            {
+                                <div class="tab-content">
+                                    <div id="over_due" class="tab-pane fade active in">
+                                        <div class="over_due_bill_view">
+                                            <div class="row">
+                                                <div class="col-xs-12 over-due-bill-view-page-inner">
+                                                    <div class="debt-table">
+                                                        <div class="column-labels">
+                                                            <label class="datedue">@Html.Label("ΠΡΟΘΕΣΜΙΑ ΠΛΗΡΩΜΗΣ")</label>
+                                                            <label class="bill-description">@Html.Label("ΠΕΡΙΓΡΑΦΗ")</label>
+                                                            <label class="product-bill-id">@Html.Label("ΑΡΙΘΜΟΣ ΛΟΓΑΡΙΑΣΜΟΥ")</label>
+                                                            <label class="bill-amount">@Html.Label("ΠΟΣΟ")</label>
+                                                        </div>
+                                                        <div class="bill">
+                                                            @foreach (var payment in Model)
+                                                            {
+                                                                <div class="datedue">
+                                                                    <p>@payment.DueDate.ToString("dd/MM/yyyy")</p>
+                                                                </div>
+                                                                <div class="bill-description">
+                                                                    <p class="bill-description2">@payment.BillDescription</p>
+                                                                </div>
+                                                                <div class="product-bill-id hidden-xs">
+                                                                    <p>@payment.BillMunicipalityId</p>
+                                                                </div>
+                                                                <div class="bill-amount">
+                                                                    <p>@payment.Amount</p>
+                                                                </div>
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+</section>
+
+
+
+<!-- End debt Subpage -->

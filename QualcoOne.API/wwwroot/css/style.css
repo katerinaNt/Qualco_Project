@@ -1,0 +1,748 @@
+﻿* {
+	margin: 0;
+	padding: 0;
+}
+
+body, html {
+	height: 100%;
+}
+
+ul, li {
+	list-style: none;
+}
+
+a {color:#333;
+}
+a:hover , a:focus{
+	text-decoration: none;
+
+}
+
+button:focus, select, .form-control {
+    outline: none;
+}
+
+.nav-pills > li > a {border-radius:0px;}
+
+.blue {
+    font-size: 30px;
+    color: #4680af;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+.wrapper {height:100%;
+}
+
+.welcome{text-align:center;
+         font-size:20px;
+}
+.mobile-visible {
+  display: none;
+  visibility: hidden;
+}
+
+.mobile-hidden {
+  display: block;
+  visibility: visible;
+}
+
+
+
+
+
+ul.check-list {
+    font-size: 17px;
+    line-height: 2;
+}
+
+.app-logo img {
+    margin: 0 auto;
+}
+
+.login-inner-btn {
+    width: 100%;
+    height: 45px;
+    background-color: #4680af;
+    color: #fff;
+    font-size: 17px;
+    border-radius: 0;
+}
+
+.login-inner-btn:hover {
+    background-color: #2d5c88;
+    color: #fff;
+}
+
+
+
+.section-title-block h2 {
+	text-align: center;
+	font-size: 25px;
+	margin-bottom: 50px;
+}
+
+.creditCardForm {
+    margin-top: 15px;
+}
+
+.total {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight:600;
+}
+.check-total {
+    font-weight: 600;
+}
+
+
+
+.form-control {border-radius:0px;
+}
+
+
+.ccv-label {
+	  
+    width: 100%;
+}
+
+.pe-7s-info {
+    float: right;
+    width: 10%;
+    font-size: 17px;
+    color: red;
+	
+}
+
+.CVVTooltip {
+   border: 1px solid #a2a2a2;
+    background-color: #ffffff;
+    padding: 5px;
+    position: absolute;
+    margin: -59px 0px 0px 160px;
+    font-size: 11px;
+    color: #3f3f3f;
+    z-index: 50;
+    width: 230px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0;
+    -webkit-box-shadow: 0px 0px 1px 1px rgba(162,162,162,0.5);
+    -moz-box-shadow: 0px 0px 1px 1px rgba(162,162,162,0.5);
+    box-shadow: 0px 0px 1px 1px rgba(162,162,162,0.5);
+	 transition: .2s linear, border-radius 1s ease-in 1s;
+}
+
+.total-txt , .check-total-txt{
+    
+    width: 85%;
+    float: left;
+}
+
+.total-amount , .check-total-amount{
+ 
+    width: 15%;
+    float: right;
+	text-align: center;
+    padding-top: 5px;
+}
+
+/* ============================================================================= 
+ Page loadig animation
+============================================================================= */
+.no-js .preloader { display: none;  }
+.preloader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: #fff;
+}
+
+.preloader-animation {
+  margin: -20px auto 0;
+  top: 50%;
+  left: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  text-align: center;
+  -webkit-animation: rotate 2.0s infinite linear;
+  animation: rotate 2.0s infinite linear;
+}
+
+.dot1, .dot2 {
+  width: 60%;
+  height: 60%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  
+   background-color: #4680af;
+ 
+  -webkit-animation: bounce 2.0s infinite ease-in-out;
+  animation: bounce 2.0s infinite ease-in-out;
+}
+
+.dot2 {
+  top: auto;
+  bottom: 0;
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes rotate {
+  100% { 
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg)
+  }
+}
+
+@-webkit-keyframes bounce {
+  0%,
+  100% {
+    -webkit-transform: scale(0.0);
+  }
+  50% {
+    -webkit-transform: scale(1.0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+
+/* ============================================================================= 
+ Site header (Panel with logo & navigation)
+============================================================================= */
+.header {
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  background-color: #fff;
+  overflow: auto;
+  -webkit-box-shadow: 0 1px 10px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 1px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 10px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.user-icon {
+  position: relative;
+  margin: 25px auto 10px;
+  max-width: 80px;
+  text-align: center;
+  z-index: 0;
+}
+
+.user-icon img {
+  position: relative;
+  border: 2px solid #fff;
+   max-width: 100%;
+}
+
+.title {
+  position: relative;
+  z-index: 1;
+  margin: 15px 20px 5px;
+  text-align: center;
+}
+
+.title-inner{
+  color: #4680af;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2em;
+  margin: 0;
+  letter-spacing: 5px;
+}
+
+.sub-title {
+    color: #2d5c88;
+    font-weight: 600;
+    font-size: 13px;
+	margin-top: 10px;
+}
+
+.menu-toggle {
+  display: block;
+  width: 50px;
+  margin: 0 4px;
+  line-height: 50px;
+  height: 50px;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  float: right;
+}
+
+.menu-toggle i {
+  color: #4680af;
+  font-size: 21px;
+  line-height: 50px;
+}
+
+
+/* Main menu */
+.site-nav {
+  display: block;
+  padding: 25px 0 30px;
+}
+.site-main-menu {
+  display: block;
+  padding: 0;
+  margin: 0;
+  font-family: 'Oxygen', Helvetica, sans-serif;
+}
+
+.site-main-menu li {
+  display: block;
+  position: relative;
+  padding: 0;
+  text-align: center;
+ 
+}
+
+.site-main-menu li a,
+.site-main-menu li a:hover {
+  display: block;
+  position: relative;
+  padding: 7px 20px;
+  text-align: center;
+  color: #000;
+  font-size: 15px;
+  font-weight: 400;
+  position: relative;
+  text-decoration: none;
+  outline: none;
+  opacity: 0.6;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.site-main-menu li:first-child a {
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.site-main-menu li a:hover,
+.site-main-menu li.active a {
+  background-color: transparent;
+  opacity: 1;
+}
+
+.site-main-menu li a:after {
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  content: '';
+  width: 0;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #4680af;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.site-main-menu li a:hover:after,
+.site-main-menu li.active a:after {
+  width: 3px;
+}
+
+.menu-icon {
+  display: block;
+  font-size: 30px;
+  margin-bottom: 3px;
+  text-align: center;
+}
+/* /Main menu */
+
+.site-main {
+    height: 100%;
+    margin-left: 200px;
+    position: relative;
+    background-color: #fff;
+}
+
+/* ============================================================================= 
+ Subpages changer
+============================================================================= */
+.pt-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  padding: 25px 5%;
+  background-color: #f5f5f5;
+  background-attachment: fixed;
+  background-position: 50%;
+  background-attachment: scroll;
+  background-position: center center;
+  overflow: hidden;
+}
+
+.subpages {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1240px;
+  -webkit-perspective: 1500px;
+  -moz-perspective: 1500px;
+  perspective: 1500px;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.pt-page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  top: auto;
+  padding: 10px 0;
+  left: 0;
+  background-color: #fff;
+  overflow: hidden;
+  visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-box-shadow: 0 1px 33px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0 1px 33px rgba(0,0,0,0.15);
+  box-shadow: 0 1px 33px rgba(0,0,0,0.15);
+}
+
+.pt-page .section-inner {
+  position: relative;
+  padding: 6px 60px 50px;
+}
+
+.no-js .pt-page {
+  position: relative;
+}
+
+.pt-page-content {
+  position: absolute;
+  width: 100%;
+}
+
+.pt-page-current,
+.no-js .pt-page {
+  visibility: visible;
+  z-index: 90;
+  opacity: 1;
+  overflow-y: overlay;
+  height: 100%;
+  min-height: 100%;
+}
+
+.pt-page.pt-page-current .portfolio-grid {
+  display: block;
+}
+
+.no-js .pt-page * {
+  height: auto;
+}
+
+.no-js body {
+  overflow: auto;
+}
+
+/*No Animation Support Message Style*/
+.pt-message {
+  display: none;
+  position: absolute;
+  z-index: 99999;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #da475c;
+  color: #fff;
+  text-align: center;
+}
+
+
+.section-with-bg {
+  -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+  backface-visibility: hidden;
+  background-attachment: fixed;
+  background-position: 50%;
+  background-size: cover;
+  -webkit-background-size: cover;
+  background-attachment: scroll;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+
+.section-paddings-0 {
+  padding: 0;
+}
+/* /Page changer */
+
+
+/* ============================================================================= 
+Subpages
+============================================================================= */
+/* =======================================
+ Home subpage
+======================================= */
+
+.app-logo {
+    margin-top: 20px;
+}
+
+.can-do {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.table {
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+    /*overflow: hidden;*/
+    margin: 0;
+}
+
+
+.home-page-block {
+  position: relative;
+  display: block;
+  width: 100%;
+  z-index: 1;
+  margin-top: 100px;
+}
+
+.home-page-block h2 {
+ color: #333;
+    text-align: center;
+    font-size: 22px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.home-page-description {
+  color: #222;
+  font-size: 21px;
+  font-weight: 300;
+  font-family: 'Oxygen', Helvetica, sans-serif;
+  margin: 0 0 5px;
+  text-align: center;
+}
+
+
+
+
+/* =======================================
+ About Me subpage
+======================================= */
+.my-info {
+	border: 2px solid #eee;
+    margin-top: 21px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+}
+
+/* About me list */
+.info-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.info-list li {
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+.info-list li:first-child {
+  padding-top: 0;
+}
+
+.info-list li .title {
+  display: inline-block;
+  font-family: 'Oxygen', Helvetica, sans-serif;
+  font-weight: 700;
+  margin-right: 12px;
+  color: #222;
+}
+
+
+
+.info-list li .value {
+  font-family: 'PT Sans', Helvetica, sans-serif;
+  min-width: 250px;
+}
+
+/*TO EFFE STO KLIK*/
+
+a.effect {
+    position: relative;
+}
+
+    a.effect:after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        width: 0;
+        height: 1.5px;
+        right: 0;
+        background-color: #e74c3c;
+        -webkit-transition: width .2s ease;
+        -o-transition: width .2s ease;
+        transition: width .2s ease;
+    }
+
+    a.effect:hover:after {
+        width: 100%;
+        left: 0;
+    }
+
+    a.effect.info {
+        color: #bbb;
+    }
+
+        a.effect.info:hover {
+            color: #e74c3c;
+        }
+
+
+.new-pass {
+    border: 2px solid #eee;
+    padding-top: 20px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    margin-bottom: 11px;
+}
+
+/* /About me list */
+
+
+
+
+
+/*contact*/
+
+.office-location {
+    margin-top: 25px;
+}
+
+/*debt*/
+.btn-cal {
+    margin-top: 23px;
+    border: 1px solid #dad9d9;
+    border-radius: 0;
+    background-color: white;
+    background: linear-gradient(#fff, #efefef);
+    border-bottom: 3px solid #dad9d9;
+    width: 100%;
+}
+
+    .btn-cal:hover {
+        background-color: #fff;
+        background: linear-gradient(#efefef, #fff);
+    }
+
+.SettlementForm {
+    margin-top: 10px;
+}
+
+button.close span {
+    border: 1px solid #909295;
+    border-radius: 60px;
+    width: 30px;
+    height: 30px;
+    color: #909295;
+    display: block;
+    line-height: 25px;
+    text-align: center;
+    -moz-transition:-moz-transform ease 0.6s;
+    -webkit-transition:-webkit-transform ease 0.6s;
+    -o-transition:-o-transform ease 0.6s;
+    transition:transform ease 0.6s;
+}
+
+    button.close span:hover {
+        color: #2d5c88;
+        border: 1px solid #2d5c88;
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+
+button.btn-pay {
+    width:95%;
+    margin-top: 10px;
+    border: 1px solid #dad9d9;
+    border-radius: 0;
+    background-color: white;
+    background: linear-gradient(#fff, #efefef);
+    border-bottom: 3px solid #dad9d9;
+}
+
+    button.btn-pay:hover {
+        background-color: #fff;
+        background: linear-gradient(#efefef, #fff);
+    }
+
+.btn-settlement {
+    width: 50%;
+    height: 40px;
+    border: 1px solid #dad9d9;
+    border-radius: 0;
+    background-color: white;
+    background: linear-gradient(#fff, #efefef);
+    border-bottom: 3px solid #dad9d9;
+}
+button.btn-settlement:hover {
+    background-color: #fff;
+    background: linear-gradient(#efefef, #fff);
+}
+
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s;
+}
+
+@-webkit-keyframes animationzoom{
+    from{-webkit-transform:scale(0)}
+    to {-webkit-transform:scale(1)}
+
+}
+
+@keyframes animatezoom{
+    from {transform: scale(0)  }
+    to {transform: scale(1)
+    }
+}
+
+.modal-content{border-radius:0;}

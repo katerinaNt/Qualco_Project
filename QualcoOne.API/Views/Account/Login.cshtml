@@ -1,0 +1,123 @@
+﻿@using System.Collections.Generic
+@using System.Linq
+@using Microsoft.AspNetCore.Http
+@using Microsoft.AspNetCore.Http.Authentication
+<<<<<<< HEAD
+
+@model QualcoOne.API.Models.AccountViewModels.LoginViewModel
+
+@inject SignInManager<QualcoOne.API.Models.ApplicationUser> SignInManager
+=======
+@model AccountDetailsViewModel
+@inject SignInManager<ApplicationUser> SignInManager
+>>>>>>> 0319a9afc0cf2301d18d1f186e09b3802ec68962
+@{
+    ViewData["Title"] = "Log in";
+}
+
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <environment include="Development">
+       
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/login.css" type="text/css">
+    </environment>
+
+</head>
+<body>
+    <div class="wrapper">
+
+        <div class="login_register">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="login-title">
+                            <img src="~/images/logo0.png" />
+                            <h1 class="title-inner">ΔΗΜΟΣ ΚΗΦΙΣΙΑΣ</h1>
+                            <p class="sub-title">ΥΠΗΡΕΣΙΑ ΑΙΤΗΜΑΤΩΝ ΠΛΗΡΩΜΩΝ ΤΟΥ ΠΟΛΙΤΗ</p>
+                        </div><!--login-title-->
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="login-inner">
+                            <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="login-form">
+                                
+                                <div asp-validation-summary="All" class="text-danger"></div>
+                                <div class="form-group">
+                                    <label asp-for="Email" ><span style="color:#2d5c88;">Email*</span></label>
+                                    <input asp-for="Email" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Password"><span style="color:#2d5c88;">Κωδικός*</span></label>
+                                    <input asp-for="Password" class="form-control" />
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <div class="checkbox">
+                                        <label asp-for="RememberMe" class="checkbox">
+                                            <input asp-for="RememberMe" />
+                                            @Html.DisplayNameFor(m => m.RememberMe)
+
+                                            <a asp-action="ForgotPassword" class=" pull-right">Ξεχάσατε τον κωδικό πρόσβασης?</a>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                     
+
+                                <div class="form-group">
+                                    <button type="submit" class="btn  btn login-inner-btn">Είσοδος</button>
+                                </div>
+                            </form>
+                            </div>
+                        </div>
+                    <div class="col-md-6 col-md-offset-2">
+                        <section>
+                         
+      
+                            @{
+                                var loginProviders = (await SignInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+                                if (loginProviders.Count == 0)
+                                {
+                                    <div>
+                                      
+                                    </div>
+                                }
+                                else
+                                {
+                                    <form asp-action="ExternalLogin" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
+                                        <div>
+                                            <p>
+                                                @foreach (var provider in loginProviders)
+                                                {
+                                                    <button type="submit" class="btn btn-default" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.Name</button>
+                                                }
+                                            </p>
+                                        </div>
+                                    </form>
+                                }
+                            }
+                        </section>
+                    </div>
+                </div>
+                @section Scripts {
+                    @await Html.PartialAsync("_ValidationScriptsPartial")
+                }
+                </div>
+</div>
+</div>
+</body>
+</html>

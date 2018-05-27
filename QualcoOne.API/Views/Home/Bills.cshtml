@@ -1,0 +1,361 @@
+﻿@*@model IEnumerable<QualcoOne.Models.Bill>*@
+@model QualcoOne.API.ViewModels.BillsViewModel
+
+@{
+        ViewData["Title"] = "Λογαριασμοί Πολίτη";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+ <!-- debt Subpage -->
+<section class="pt-page pt-page-3 table pt-page-current" data-id="debt">
+    <div class="border-block-top-110"></div>
+    <div class="section-inner">
+        <div class="section-title-block">
+            <div class="section-title-wrapper">
+                <div class="app-logo"><img src="~/images/logo2.png" class="img-responsive" /></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 subpage-block" style="margin-top:30px;">
+                <ul class="nav nav-pills">
+                    <li class="active">
+                        @Html.ActionLink("Ανεξόφλητοι", "Bills", "Home", null)
+                    </li>
+                    <li>
+                        @Html.ActionLink("Εξοφλημένοι", "Payments", "Home", null, new { @class = "pill-marg" })
+                    </li>
+                    <li>
+                        @Html.ActionLink("Προς Διακανονισμό", "Settlements", "Home", null, new { @class = "pill-marg" })
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    @if (!Model.Bills.Any())
+                    {
+                        <br>
+                        <p>Δεν υπάρχουν ανεξόφλητοι λογαριασμοί</p>
+                    }
+                    else
+                    {
+                        <div id="over_due" class="tab-pane fade active in">
+                            <div class="over_due_bill_view">
+                                <div class="row">
+                                    <div class="col-xs-12 over-due-bill-view-page-inner">
+                                        <div class="debt-table">
+                                            <div class="column-labels">
+                                                <label class="check-debt"></label>
+                                                <label class="datedue">@Html.Label("ΠΡΟΘΕΣΜΙΑ ΠΛΗΡΩΜΗΣ")</label>
+                                                <label class="bill-description">@Html.Label("ΠΕΡΙΓΡΑΦΗ")</label>
+                                                <label class="product-bill-id">@Html.Label("ΑΡΙΘΜΟΣ ΛΟΓΑΡΙΑΣΜΟΥ")</label>
+                                                <label class="bill-amount">@Html.Label("ΠΟΣΟ")</label>
+                                                <label class="pay-btn"></label>
+                                            </div>
+<<<<<<< HEAD
+                                        <div class="bills">
+=======
+                                        <div class="bill">
+>>>>>>> 0319a9afc0cf2301d18d1f186e09b3802ec68962
+                                            @for (var i = 0; i < Model.Bills.Count; i++)
+                                            {
+                                                <div class="bill">
+                                                    <div class="check-debt">
+<<<<<<< HEAD
+                                                        @Html.CheckBoxFor(m => m.Bills[i].IsChecked, new { @onchange = "UpdatePayment()", @class = "billCheck", data_billid = Model.Bills[i].BillId })
+=======
+                                                        @Html.CheckBoxFor(m => m.Bills[i].IsChecked, new { @id = Model.Bills[i].BillId, @onchange= "UpdatePayment()", @class="billCheck", @name = "bill1", @value = "bill1" })
+>>>>>>> 0319a9afc0cf2301d18d1f186e09b3802ec68962
+                                                    </div>
+                                                    <div class="datedue">
+                                                        <p>@Html.DisplayFor(m => m.Bills[i].DueDate)</p>
+                                                    </div>
+                                                    <div class="bill-description">
+                                                        <p>@Html.DisplayFor(m => m.Bills[i].BillDescription)</p>
+                                                    </div>
+                                                    <div class="product-bill-id hidden-xs">
+                                                        <p>@Html.DisplayFor(m => m.Bills[i].BillMunicipalityId)</p>                                                       
+                                                    </div>
+                                                    <div class="bill-amount">
+                                                        <p>@Html.DisplayFor(m => m.Bills[i].Amount)</p>
+                                                    </div>
+                                                    <div class="payment">
+                                                        <button data-toggle="modal" data-target=".creditCardForm" class="btn-pay">ΠΛΗΡΩΜΗ</button>
+                                                    </div>
+<<<<<<< HEAD
+                                                    @Html.HiddenFor(m=>m.Bills[i].BillId, new {@class = "input-bill-id" })
+                                                </div>
+                                            }           
+=======
+                                                </div>
+                                            }
+
+
+
+                                                @*@foreach (var payment in Model.Bills)
+                                                {                                       
+                                                    <div class="bill">
+                                                        <div class="check-debt">
+                                                            <input onchange="UpdatePayment()" type="checkbox" name="bill1" value="bill1" class="billCheck">
+                                                        </div>
+                                                        <div class="datedue">
+                                                            <p>@payment.DueDate.ToString("dd/MM/yyyy")</p>
+                                                        </div>
+                                                        <div class="bill-description">
+                                                            <p class="bill-description2">@payment.BillDescription</p>
+                                                        </div>
+                                                        <div class="product-bill-id hidden-xs">
+                                                            <p>@payment.BillMunicipalityId</p>
+                                                        </div>
+                                                        <div class="bill-amount">
+                                                            <p>@payment.Amount</p>
+                                                        </div>
+                                                        <div class="payment">
+                                                            <button data-toggle="modal" data-target=".creditCardForm" class="btn-pay">ΠΛΗΡΩΜΗ</button>
+                                                        </div>
+                                                    </div>
+                                                }*@
+>>>>>>> 0319a9afc0cf2301d18d1f186e09b3802ec68962
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 0319a9afc0cf2301d18d1f186e09b3802ec68962
+                    <div class="row" style="margin-top:20px;">
+                        <div class=" col-xs-12 col-sm-7 col-lg-7 ">
+                            <div class="payment-methods">
+                                <div id="payment" class="checkout-payment">
+                                    <h2 style="margin-top:30px; font-size: 20px;">Αίτηση Διακανονισμού</h2>
+                                    <p id="error" style="color:#f00">Επιλέξτε πρώτα λογαριαμούς</p>
+                                    <button class="settlement btn-settlement" data-toggle="collapse" data-target=".SettlementForm"> ΔΙΑΚΑΝΟΝΙΣΜΟΣ</button>
+<<<<<<< HEAD
+                                    <div class="js-paybill-form login-form settlement-form">
+=======
+                                    <form action="">
+>>>>>>> 0319a9afc0cf2301d18d1f186e09b3802ec68962
+                                        <div class="SettlementForm collapse ">
+
+                                            <div class="row">
+                                                <div class="form-group col-sm-12">
+                                                    <label for="card-type">Τύποι Διακανονισμού *</label>
+                                                    <div class="required">
+<<<<<<< HEAD
+                                                        @Html.DropDownListFor(m => m.CitizenSettlementTypeId, new SelectList(Model.SettlementTypes, "SettlementTypeId", "Description"), new { @class = "form-control", @id = "type", @onchange = "javascript:SetInstallments()" })
+=======
+                                                        @Html.DropDownListFor(m => m.SettlementTypeId, new SelectList(Model.SettlementTypes, "SettlementTypeId", "Description"), new { @class = "form-control", @id = "type", @onchange = "javascript:SetInstallments()" })
+>>>>>>> 0319a9afc0cf2301d18d1f186e09b3802ec68962
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="form-group mod col-sm-6">
+                                                    <label for="installmentsnumber">Αριθμός Δόσεων*</label>
+                                                    <div class="required">
+                                                        <select class="form-control " id="Installments">
+<<<<<<< HEAD
+                                                            <option value="3">03</option>
+                                                            <option value="6">06</option>
+                                                            <option value="9">09</option>
+=======
+                                                            <option value="03">03</option>
+                                                            <option value="06">06</option>
+                                                            <option value="09">09</option>
+>>>>>>> 0319a9afc0cf2301d18d1f186e09b3802ec68962
+                                                            <option value="12">12</option>
+                                                            <option value="15">15</option>
+                                                            <option value="18">18</option>
+                                                            <option value="21">21</option>
+                                                            <option value="24">24</option>
+<<<<<<< HEAD
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-6">
+                                                <button type="submit" class="btn btn-cal " id="calculate">ΥΠΟΛΟΓΙΣΜΟΣ</button>
+=======
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group col-sm-6">
+                                                    <button type="button" class="btn btn-cal " id="calculate">ΥΠΟΛΟΓΙΣΜΟΣ</button>
+                                                </div>
+
+>>>>>>> 0319a9afc0cf2301d18d1f186e09b3802ec68962
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-sm-12">
+<<<<<<< HEAD
+                                                    <div class="downpayment"><p>Η προκαταβολή σας είναι: </p>
+                                                        <label id="ResultDP"></label>
+                                                    </div>
+                                                    <div class="month-ins"><p>Η μηνιαία σας δόση είναι: </p></div>
+                                                </div>
+                                            </div>
+                                            <section class="js-paybill-form login-form" >
+                                            <div class="row">
+                                                <div class="form-group col-sm-12">                                                    
+                                                    <button type="submit" class="btn btn-cal-setl login-inner-btn" id="calculate">ΚΑΤΑΧΩΡΗΣΗ ΔΙΑΚΑΝΟΝΙΣΜΟΥ</button>
+                                                </div>
+                                            </div>
+                                            </section>
+                                        </div>
+                                    </div>
+=======
+                                                    <div class="downpayment"><p>Η προκαταβολή σας είναι:</p></div>
+                                                    <div class="month-ins"><p>Η μηνιαία σας δόση είναι:</p></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="form-group col-sm-12">
+                                                    <button type="submit" class="btn login-inner-btn " id="confirm-purchase">ΚΑΤΑΧΩΡΗΣΗ ΔΙΑΚΑΝΟΝΙΣΜΟΥ</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </form>
+
+>>>>>>> 0319a9afc0cf2301d18d1f186e09b3802ec68962
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-5 col-lg-5">
+                            <div class="totals">
+
+                                <div class="total">
+                                    <div class="total-txt"><h5>ΣΥΝΟΛΟ ΟΦΕΙΛΩΝ </h5></div>
+                                    <div class="total-amount"><span>55</span></div>
+                                </div><!--.total-->
+
+
+                                <div class="check-total">
+                                    <div class="check-total-txt"><h5>ΣΥΝΟΛΟ ΕΠΙΛΕΓΜΕΝΩΝ ΟΦΕΙΛΩΝ </h5></div>
+                                    <div class="check-total-amount"><span>0</span></div>
+                                </div>
+                            </div><!-- .totals-->
+                        </div>
+                    </div>
+<<<<<<< HEAD
+                    }                              
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<div class="creditCardForm modal animate " role="dialog" id="loginModal">
+    <div class="modal-dialog " role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close " data-dismiss="modal" aria-label="close"><span class="btn-close" aria-hidden="true">x</span></button>
+                <div class="modal-title"><h4>Πληρωμή με πιστωτική κάρτα</h4></div><!--modal-title-->
+            </div><!--end modal-header-->
+            <div class="modal-body">
+
+                <form class="payment-form">
+
+                    <input type="hidden" value="" class="payment-bill-id" name="billId" id="billId"/>
+
+                    <div class="row">
+                        <div class="form-group col-sm-5">
+                            <label for="card-type">Τύπος κάρτας *</label>
+                            <div class="required">
+                                <select class="form-control ">
+                                    <option value="vs">VISA</option>
+                                    <option value="ms">Mastercard</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-7">
+                            <label for="card-number">Αριθμός πιστωτικής κάρτας*</label>
+                            <div class="required">
+                                <input type="number" id="CreditcardNumber" name="CreditcardNumber" class="form-control mod" placeholder="" required="required">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-12">
+                            <label for="card-number">Όνομα κατόχου κάρτας*</label>
+                            <div class="required">
+                                <input type="text" class="form-control mod" placeholder="" required="required">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group mod col-sm-4">
+                            <label for="datedue">Ημερομηνία Λήξης*</label>
+                            <div class="required">
+                                <select class="form-control ">
+                                    <option>01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-sm-4" style="padding-top:25px;">
+                            <div class="required">
+                                <select class="form-control ">
+                                    <option>2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label for="ccv" class="ccv-label">CCV*  <span class="pe-7s-icon pe-7s-info" style="cursor:pointer;" onmouseover="$('#CVVTooltip').show();" onmouseout="$('#CVVTooltip').hide();"></span></label>
+                            <div class="required">
+                                <input type="text" class="form-control mod" placeholder="" required="required">
+                            </div>
+                            <div style="display:none;" class="CVVTooltip" id="CVVTooltip">
+                                <div class="pull-left" style="width: 30%;"><img src="~/images/cvv.png"></div>
+                                <div class="pull-right" style="width: 70%;">Ο κωδικός αριθμός ασφαλείας (card security code) είναι ένας τριψήφιος ή τετραψήφιος αριθμός που αναγράφεται στο μπροστινό ή πίσω μέρος μίας πιστωτικής ή χρεωστικής κάρτας.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-12">
+                            <button type="submit" class="btn login-inner-btn paymentbtn" name="paymentbtn" id="confirm-purchase">ΠΛΗΡΩΜΗ</button>
+                        </div>
+                    </div>
+                </form>
+            </div><!--modal-body-->
+
+        </div>
+    </div>
+
+</div>
+<style>
+    .modal-backdrop {z-index:-1}
+</style>
+<!-- End debt Subpage -->
+=======
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+>>>>>>> 0319a9afc0cf2301d18d1f186e09b3802ec68962

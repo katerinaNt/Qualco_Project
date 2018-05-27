@@ -1,0 +1,224 @@
+﻿
+@using System.Security.Claims
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] -latest</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/pe-icon-7-stroke.css">
+        <link rel="stylesheet" href="~/css/transition-animations.css" type="text/css">
+        <link rel="stylesheet" href="~/css/style.css" type="text/css">
+        <link rel="stylesheet" href="~/css/table.css?ver=a" type="text/css">
+        <link rel="stylesheet" href="~/css/responsive.css" type="text/css">
+        <!--[if IE]-->
+        <link rel="stylesheet" href="~/css/style-only-ie.css" type="text/css">
+        <!--[endif]-->
+
+
+        <script src="~/js/modernizr.custom.js" asp-append-version="true"></script>
+
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+</head>
+<body>
+    <header class="header mobile-menu-hide ">
+
+        <div class="user-icon"> <img src="~/images/logo0.png" alt="image"></div>
+
+        <div class="title">
+            <h1 class="title-inner">ΔΗΜΟΣ ΚΗΦΙΣΙΑΣ</h1>
+            <p class="sub-title">ΥΠΗΡΕΣΙΑ ΑΙΤΗΜΑΤΩΝ ΠΛΗΡΩΜΩΝ ΤΟΥ ΠΟΛΙΤΗ</p>
+        </div>
+
+
+        <!-- Navigation -->
+        <div class="site-nav">
+            <!-- Main menu -->
+            <ul id="nav" class="site-main-menu">
+                <li>
+                    <a class="pt-trigger" asp-controller="Home" asp-action="Index" data-animation="21"><i class="menu-icon pe-7s-icon pe-7s-home"></i>ΑΡΧΙΚΗ</a><!-- href value =				data-id without # of .pt-page. -->
+                </li>
+                <li>
+                    <a class="pt-trigger" asp-controller="Home" asp-action="AccountDetails" data-animation="17"><i class="menu-icon pe-7s-icon pe-7s-user"></i>ΠΡΟΦΙΛ</a>
+                </li>
+                <li>
+                    <a class="pt-trigger" asp-controller="Home" asp-action="Bills" data-animation="17"><i class="menu-icon pe-7s-icon pe-7s-piggy"></i>ΟΦΕΙΛΕΣ</a>
+                </li>
+
+                <li>
+                    <a class="pt-trigger" asp-controller="Home" asp-action="Contact" data-animation="17"><i class="menu-icon pe-7s-icon pe-7s-mail"></i>ΕΠΙΚΟΙΝΩΝΙΑ</a>
+                </li>
+
+
+                <li>
+                  
+                    <a class="pt-trigger" asp-controller="Account" asp-action="Logout" data-animation="17"><i class="menu-icon pe-7s-icon pe-7s-back-2"></i>ΕΞΟΔΟΣ</a>
+                </li>
+
+            </ul>
+            <!-- /Main menu -->
+        </div>
+        <!-- Navigation -->
+
+    </header>
+
+    <div class="mobile-header mobile-visible">
+        <div class="mobile-logo-container">
+            <div class="mobile-site-title"><a href="#home">ΔΗΜΟΣ ΚΗΦΙΣΙΑΣ</a> </div>
+        </div>
+
+        <a class="menu-toggle mobile-visible">
+           <i class="fa fa-bars"></i>
+            
+</a>
+    </div>
+   
+
+    <div id="main" class="site-main">
+        <div class="pt-wrapper">
+            <div class="subpages">
+                @RenderBody()
+            </div>
+        </div>
+
+<<<<<<< HEAD
+=======
+    </div>
+
+    <div class="creditCardForm modal animate " role="dialog">
+        <div class="modal-dialog " role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close " data-dismiss="modal" aria-label="close"><span class="btn-close" aria-hidden="true">x</span></button>
+                    <div class="modal-title"><h4>Πληρωμή με πιστωτική κάρτα</h4></div><!--modal-title-->
+                </div><!--end modal-header-->
+                <div class="modal-body">
+                    <div class="row">
+
+                        <div class="form-group col-sm-5">
+                            <label for="card-type">Τύπος κάρτας *</label>
+                            <div class="required">
+                                <select class="form-control ">
+                                    <option value="vs">VISA</option>
+                                    <option value="ms">Mastercard</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-sm-7">
+                            <label for="card-number">Αριθμός πιστωτικής κάρτας*</label>
+                            <div class="required">
+                                <input type="number" class="form-control mod" placeholder="" required="required">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-sm-12">
+                            <label for="card-number">Όνομα κατόχου κάρτας*</label>
+                            <div class="required">
+                                <input type="text" class="form-control mod" placeholder="" required="required">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group mod col-sm-4">
+                            <label for="datedue">Ημερομηνία Λήξης*</label>
+                            <div class="required">
+                                <select class="form-control ">
+                                    <option>01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group col-sm-4" style="padding-top:25px;">
+
+                            <div class="required">
+                                <select class="form-control ">
+                                    <option>2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-sm-4">
+                            <label for="ccv" class="ccv-label">CCV*  <span class="pe-7s-icon pe-7s-info" style="cursor:pointer;" onmouseover="$('#CVVTooltip').show();" onmouseout="$('#CVVTooltip').hide();"></span></label>
+                            <div class="required">
+                                <input type="text" class="form-control mod" placeholder="" required="required">
+                            </div>
+
+                            <div style="display:none;" class="CVVTooltip" id="CVVTooltip">
+                                <div class="pull-left" style="width: 30%;"><img src="~/images/cvv.png"></div>
+                                <div class="pull-right" style="width: 70%;">Ο κωδικός αριθμός ασφαλείας (card security code) είναι ένας τριψήφιος ή τετραψήφιος αριθμός που αναγράφεται στο μπροστινό ή πίσω μέρος μίας πιστωτικής ή χρεωστικής κάρτας.</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-sm-12">
+                                <button type="submit" class="btn login-inner-btn " id="confirm-purchase">ΠΛΗΡΩΜΗ</button>
+                        </div>
+                    </div>
+                </div><!--modal-body-->
+            </div>
+        </div>
+
+>>>>>>> 0319a9afc0cf2301d18d1f186e09b3802ec68962
+    </div>
+
+           
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/main.js" asp-append-version="true"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,196 @@
+	  
+.over_due_bill_view {
+    margin-top: 20px;
+}
+
+
+/* Global settings */
+/* Global "table" column settings */
+.check-debt {
+    float: left;
+    width: 5%;
+}
+
+.bill-description {
+    float: left;
+    width: 20%;
+}
+
+.product-bill-id {
+  float: left;
+  width: 25%;
+}
+
+.bill-amount {
+  float: left;
+  width: 15%;
+  text-align: center;
+}
+
+
+
+.datedue{
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+
+.payment{
+    float:right;
+    width:15%;
+}
+
+/* This is used as the traditional .clearfix class */
+.group2:before, .debt-table:before, .column-labels:before, .bill:before,
+.group2:after,
+.debt-table:after,
+.column-labels:after,
+.bill:after {
+    content: '';
+    display: table;
+}
+
+.group2:after, .debt-table:after, .column-labels:after, .bill:after {
+    clear: both;
+}
+
+.group2, .debt-table, .column-labels, .bill {
+    zoom: 1;
+}
+
+
+
+label2 {
+  color: #aaa;
+}
+
+
+
+/* Column headers */
+.column-labels label2 {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+
+/* Product entries */
+.bill{
+ 
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+    .bill .check-debt {
+        text-align: center;
+    }
+        .bill .check-debt img {
+            width: 100px;
+        }
+    .bill .bill-description .product-title2 {
+        margin-right: 20px;
+        font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+    }
+    .bill .bill-description .bill-description2 {
+        margin: 5px 20px 5px 10px;
+        line-height: 1.4em;
+    }
+.bill .product-quantity2 input {
+  width: 40px;
+}
+
+
+
+
+
+/* Make adjustments for tablet */
+@media screen and (max-width: 650px) {
+    .debt-table {
+        margin: 0;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+    }
+
+    /* .column-labels {
+    display: none;
+  }*/
+
+    .check-debt {
+        width: auto;
+    }
+        .check-debt img {
+            margin: 0 0 10px 10px;
+        }
+
+    .bill-description {
+        float: none;
+        margin-bottom: 10px;
+        width: auto;
+
+    }
+
+  
+
+  .product-bill-id {
+    width: 100px;
+  }
+  .product-quantity2 input {
+    margin-left: 20px;
+  }
+
+
+
+  
+
+ 
+}
+
+
+@media screen and (max-width: 650px) {
+
+    .check-debt {
+        float: left;
+        width: 10%;
+    }
+
+    .bill-description {
+        width: 35%;
+        float: left;
+    }
+
+	.bill-amount {
+    width: 25%;
+    float: left;
+}
+
+
+	.datedue {
+		width: 30%;
+    float: right;
+	}
+
+    .payment {
+        width: 100%;
+        margin-bottom: 10px;
+        padding-left: 45px;
+    }
+
+}
+
+
+
+
+
+
+.column-labels {
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    padding: 10px;
+    text-transform: uppercase;
+	background-color: #fcfcfc;
+}
+
+.check-debt {
+    padding: 10px;
+}
+

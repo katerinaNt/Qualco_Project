@@ -1,0 +1,18 @@
+﻿@model QualcoOne.API.ViewModels.BillsViewModel
+
+
+@{
+    ViewData["Title"] = "Bills";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Bills</h2>
+
+@for (var i = 0; i < Model.Bills.Count; i++)
+                                                            { <div>
+        <div>
+            @Html.CheckBoxFor(m => m.Bills[i].IsChecked, new { @id = Model.Bills[i].BillId }) <span>@Model.Bills[i].BillDescription</span>
+        </div>
+    </div>
+                                                            }
+

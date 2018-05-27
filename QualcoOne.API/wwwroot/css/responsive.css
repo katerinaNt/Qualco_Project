@@ -1,0 +1,204 @@
+/* ============================================================================= 
+10. Media Queries 
+============================================================================= */
+
+@media only screen and (max-width: 1320px) {
+  .portfolio-grid figure {
+    width: 33.33333%;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .mobile-visible {
+    display: block;
+    visibility: visible;
+  }
+
+  .mobile-hidden {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  .border-block-top-110 {
+    display: none;
+  }
+
+  .header {
+    width: 100%;
+    max-width: 320px;
+    height: calc(100% - 50px);
+    top: 50px;
+    z-index: 999;
+    -webkit-box-shadow: 5px 0px 20px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 5px 0px 20px 0px rgba(0,0,0,0.1);
+    box-shadow: 5px 0px 20px 0px rgba(0,0,0,0.1);
+    -webkit-transition: all 0.66s ease-in-out;
+    -moz-transition: all 0.66s ease-in-out;
+    -o-transition: all 0.66s ease-in-out;
+    -ms-transition: all 0.66s ease-in-out;
+    transition: all 0.66s ease-in-out;
+  }
+
+  .my-photo {
+    margin-top: 30px;
+  }
+
+  .site-title {
+    font-size: 27px;
+  }
+
+  .mobile-header {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #eee;
+    background-color: #fff;
+    z-index: 1000;
+	color: #4680af;
+  }
+	.title-inner {display:none;
+	}
+
+
+  .mobile-logo-container {
+    margin: 0 20px;
+    text-align: left;
+  }
+
+  .mobile-site-title {
+    display: inline-block;
+    float: left;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Oxygen', Helvetica, sans-serif;
+    margin: 0;
+    line-height: 50px;
+  }
+
+  .site-title-block .site-description {
+    display: none;
+  }
+
+  .subpage-block {
+    margin-bottom: 40px;
+  }
+
+  .site-main {
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    border: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .section-title-block {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .section-title-wrapper {
+    display: block;
+    text-align: center;
+  }
+
+  .section-title {
+    display: inline-block;
+    position: relative;
+    font-size: 38px;
+  }
+
+  .section-title:after {
+    display: none;
+  }
+
+  .section-title-block .section-description {
+    position: relative;
+    font-size: 13px;
+    margin-top: -10px;
+  }
+
+  p.site-description {
+    color: #888;
+    text-shadow: none;
+  }
+
+  .pt-wrapper {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  .pt-page-current, .no-js .pt-page {
+    overflow: auto;
+  }
+
+  .pt-page .section-inner {
+    padding: 5px 20px;
+  }
+
+  .mobile-menu-hide {
+    margin-left: -100%;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .home-page-block h2 {
+    font-size: 20px;
+  }
+
+  .home-page-description {
+    font-size: 18px;
+  }
+
+  .ajax-page-wrapper {
+    padding-left: 20px;
+    padding-right: 20px; 
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  .portfolio-grid figure {
+    width: 50%;
+  }
+
+  .home-page-block h2 {
+    font-size: 20px;
+  }
+
+  .home-page-description {
+    font-size: 18px;
+  }
+
+  .info-list {
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .portfolio-grid figure {
+    width: 100%;
+  }
+
+  .home-page-block h2 {
+    font-size: 20px;
+  }
+
+  .home-page-description {
+    font-size: 16px;
+  }
+
+  .totals {
+    margin-left: 0px; 
+}
+  
+}
+

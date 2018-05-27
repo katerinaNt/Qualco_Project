@@ -1,0 +1,222 @@
+﻿
+@{
+    ViewData["Title"] = "Debt";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+ <!-- debt Subpage -->
+<section class="pt-page pt-page-3 table pt-page-current" data-id="debt">
+    <div class="border-block-top-110"></div>
+    <div class="section-inner">
+        <div class="section-title-block">
+            <div class="section-title-wrapper">
+                <div class="app-logo"><img src="~/images/logo2.png" class="img-responsive" /></div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 subpage-block" style="margin-top:30px;">
+
+                <ul class="nav nav-pills"> 
+                    <li class="active"><a data-toggle="pill" href="#over_due">ΛΗΞΙΠΡΟΘΕΣΜΟΙ</a></li>
+                    <li><a data-toggle="pill" href="#menu2" class="pill-marg">ΜΑΚΡΟΠΡΟΘΕΣΜΟΙ</a></li>
+                    <li><a data-toggle="pill" href="#menu3" class="pill-marg">ΕΞΟΦΛΗΜΕΝΟΙ</a></li>
+                </ul>
+
+                <div class="tab-content">
+
+
+                    <div id="over_due" class="tab-pane fade active in" >
+
+                        <div class="over_due_bill_view">
+
+                            <div class="row">
+                                <div class="col-xs-12 over-due-bill-view-page-inner">
+
+
+                                    <div class="debt-table">
+
+                                        <div class="column-labels">
+                                            <label class="check-debt"></label>
+                                            <label class="bill-description">ΠΕΡΙΓΡΑΦΗ</label>
+                                            <label class="product-bill-id hidden-xs">ΑΡ. ΛΟΓΑΡΙΑΣΜΟΥ</label>
+                                            <label class="bill-amount">ΠΟΣΟ</label>
+                                            <label class="datedue">ΗΜ ΛΗΞΗΣ</label>
+                                            <label class="pay-btn"></label>
+                                        </div>
+
+                                        <div class="bill">
+                                            <div class="check-debt">
+                                                <input  onchange="UpdatePayment()" type="checkbox" name="bill1" value="bill1" class="billCheck">
+                                            </div>
+                                            <div class="bill-description">
+
+                                                <p class="bill-description2">Ambulance</p>
+                                            </div>
+
+                                            <div class="product-bill-id hidden-xs">
+                                                d5395597-200e-4015-86b8-89ab845eda02
+                                            </div>
+                                            <div class="bill-amount">12.99</div>
+
+                                            <div class="datedue">28-09-2017</div>
+
+                                            <div class="payment"><button data-toggle="modal" data-target=".creditCardForm" class="btn-pay">ΠΛΗΡΩΜΗ</button></div>
+                                        </div>
+
+                                        <div class="clearfix"></div>
+
+                                        <div class="bill">
+                                            <div class="check-debt">
+                                                <input onchange="UpdatePayment()" type="checkbox" name="bill2" value="bill2" class="billCheck">
+                                            </div>
+                                            <div class="bill-description">
+
+                                                <p class="bill-description2">Food Inspection</p>
+                                            </div>
+
+                                            <div class="product-bill-id hidden-xs">
+                                                db90d2dc-3f0f-47a0-a8a0-0fa019ad6d36
+                                            </div>
+
+                                            <div class="bill-amount">45.99</div>
+                                            <div class="datedue">13-09-2017</div>
+
+                                            <div class="payment"><button data-toggle="modal" data-target=".creditCardForm" class="btn-pay">ΠΛΗΡΩΜΗ</button></div>
+                                        </div>
+
+
+
+                                        <div class="row" style="margin-top:20px;">
+
+
+                                            <div class=" col-xs-12 col-sm-7 col-lg-7 ">
+                                                <div class="payment-methods">
+
+                                                    <div id="payment" class="checkout-payment">
+
+                                                        <h2 style="margin-top:30px; font-size: 20px;">Αίτηση Διακανονισμού</h2>
+                                                        <p id="error" style="color:#f00">Επιλέξτε πρώτα λογαριαμούς</p>
+                                                                                                
+
+
+
+
+                                                            <button class="settlement btn-settlement"  data-toggle="collapse" data-target=".SettlementForm"> ΔΙΑΚΑΝΟΝΙΣΜΟΣ</button>
+                                                        <form action="">
+                                                            <div class="SettlementForm collapse ">
+                                                                <div class="row">
+
+                                                                    <div class="form-group col-sm-12">
+                                                                        <label for="card-type">Τύποι Διακανονισμού *</label>
+                                                                        <div class="required">
+                                                                            <select class="form-control " id="type" onchange="javascript:SetInstallments()">
+                                                                                <option value="1">10% προκαταβολή, 4,1% επιτόκιο εώς 24 δόσεις</option>
+                                                                                <option value="2">20% προκαταβολή, 3,9% επιτόκιο εώς 24 δόσεις </option>
+                                                                                <option value="3">30% προκαταβολή, 3,6% επιτόκιο εώς 36 δόσεις </option>
+                                                                                <option value="4">40% προκαταβολή, 3,2% επιτόκιο εώς 36 δόσεις </option>
+                                                                                <option value="5">50% προκαταβολή, 2,6% επιτόκιο εώς 48 δόσεις </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="row">
+                                                                    <div class="form-group mod col-sm-6">
+                                                                        <label for="installmentsnumber">Αριθμός Δόσεων*</label>
+                                                                        <div class="required">
+                                                                            <select class="form-control " id="Installments">
+                            
+                                                                                <option value="03">03</option>
+                                                                                <option value="06">06</option>
+                                                                                <option value="09">09</option>
+                                                                                <option value="12">12</option>
+                                                                                <option value="15">15</option>
+                                                                                <option value="18">18</option>
+                                                                                <option value="21">21</option>
+                                                                                <option value="24">24</option>
+                                                                                
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-sm-6">
+                                                                        <button type="button" class="btn btn-cal " id="calculate">ΥΠΟΛΟΓΙΣΜΟΣ</button>
+                                                                    </div>
+
+                                                                </div>
+
+                                                                <div class="row">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="downpayment"><p>Η προκαταβολή σας είναι:</p></div>
+                                                                        <div class="month-ins"><p>Η μηνιαία σας δόση είναι:</p></div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="row">
+                                                                    <div class="form-group col-sm-12">
+                                                                        <button type="submit" class="btn login-inner-btn " id="confirm-purchase">ΚΑΤΑΧΩΡΗΣΗ ΔΙΑΚΑΝΟΝΙΣΜΟΥ</button>
+                                                                    </div>
+                                                                </div>
+
+
+
+                                                            </div>
+                                                        </form>
+
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xs-12 col-sm-5 col-lg-5">
+                                                <div class="totals">
+
+                                                    <div class="total">
+                                                        <div class="total-txt"><h5>ΣΥΝΟΛΟ ΟΦΕΙΛΩΝ </h5></div>
+                                                        <div class="total-amount"><span>55</span></div>
+                                                    </div><!--.total-->
+
+
+                                                    <div class="check-total">
+                                                        <div class="check-total-txt"><h5>ΣΥΝΟΛΟ ΕΠΙΛΕΓΜΕΝΩΝ ΟΦΕΙΛΩΝ </h5></div>
+                                                        <div class="check-total-amount"><span>0</span></div>
+                                                    </div>
+                                                </div><!-- .totals-->
+                                            </div>
+                                        </div>
+
+
+
+
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+
+
+                        </div>  <!--.all_bill_view-->
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+       
+
+        
+
+
+
+</section>
+
+
+
+<!-- End debt Subpage -->

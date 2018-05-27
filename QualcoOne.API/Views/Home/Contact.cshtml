@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+<section class="pt-page pt-page-4 pt-page-current">
+    <div class="border-block-top-110"></div>
+    <div class="section-inner">
+        <div class="section-title-block">
+            <div class="section-title-wrapper">
+                <div class="app-logo"><img src="~/images/logo2.png" class="img-responsive" /></div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 col-md-6 subpage-block">
+                <div class="block-title">
+                    <h4>Επικοινωνήστε μαζί μας</h4>
+                </div>
+                <p>Για οποιαδήποτε απορία επικοινωνήστε με τα γραφεία του δήμου μας.</p>
+
+                <div class="office-location"><i class="pe-7s-icon pe-7s-map-marker blue"></i> <span>Διονύσου & Μυρσίνης 2</span></div>
+                <div class="mail"><i class="pe-7s-icon pe-7s-mail blue"></i> <span>info@example.gr</span></div>
+                <div class="phone"><i class="pe-7s-icon pe-7s-call blue"></i> <span>210 1234567</span></div>
+                <div class="hour"><i class="pe-7s-icon pe-7s-clock blue"></i> <span>Ωρες Λειτουργίας: 9:00-14:00</span></div>
+            </div>
+
+            <div class="col-sm-6 col-md-6 subpage-block">
+                <div class="block-title">
+                    <h3>Contact Form</h3>
+                </div>
+                <form id="contact-form" method="post" action="contact_form/contact_form.php">
+
+                    <div class="messages"></div>
+
+                    <div class="controls">
+                        <div class="form-group">
+                            <input id="form_name" type="text" name="name" class="form-control" placeholder="Full Name" required="required" data-error="Name is required.">
+                            <div class="form-control-border"></div>
+
+                            <div class="help-block with-errors"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <input id="form_email" type="email" name="email" class="form-control" placeholder="Email Address" required="required" data-error="Valid email is required.">
+                            <div class="form-control-border"></div>
+
+                            <div class="help-block with-errors"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea id="form_message" name="message" class="form-control" placeholder="Message for Me" rows="4" required="required" data-error="Please, leave me a message."></textarea>
+                            <div class="form-control-border"></div>
+
+                            <div class="help-block with-errors"></div>
+                        </div>
+
+                        <input type="submit" class="button login-inner-btn" value="Send message">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Contact Subpage -->

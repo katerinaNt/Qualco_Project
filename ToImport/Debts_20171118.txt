@@ -1,0 +1,4 @@
+VAT;FIRST_NAME;LAST_NAME;EMAIL;PHONE;ADDRESS;COUNTY;BILL_ID;DESCRIPTION;AMOUNT;DATE_DUE
+2492601206;Juliet;Young;Juliet_Young@yahoo.com;858674230;Marshall Street 158;Montebello;d5395597-200e-4015-86b8-89ab845eda02;Ambulance;46,35;20170928
+1795827453;Yasmin;Roberson;Yasmin_Roberson@yahoo.com;858871381;River Road 409;Bradbury;8b66610a-20c1-4f47-9f37-489d1a8ce31a;Ambulance;53,42;20170820
+6667085223;Araceli;Glass;Araceli_Glass@hotmail.com;858177648;Colonial Avenue 991;Diamond Bar;db90d2dc-3f0f-47a0-a8a0-0fa019ad6d36;Food Inspection;82,63;20170913

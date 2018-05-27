@@ -1,0 +1,161 @@
+﻿@model QualcoOne.API.ViewModels.AccountDetailsViewModel
+
+@{
+    ViewBag.Title = "Στοιχεία Πολίτη";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<<<<<<< HEAD
+@using (Html.BeginForm("UpdateCitizenPassword", "Home"))
+{
+    <section class="pt-page pt-page-2 pt-page-current" data-id="about_me">
+        <div class="border-block-top-110"></div>
+        <div class="section-inner">
+            <div class="app-logo"><img src="~/images/logo2.png" class="img-responsive" /></div>
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6 subpage-block">
+                    <h4 class="my-info">Προσωπικα στοιχεια</h4>
+                    <ul class="info-list">
+                        @if ((@Model.CitizenId == "0"))
+                        {
+                            <li><span class="title">Δεν βρέθηκε πολίτης με αυτά τα στοιχεία</span></li>
+                        }
+                        else
+                        {
+                            <li><span class="title">ΑΦΜ</span><span class="value">@Model.CitizenId</span></li>
+                            <li><span class="title">Όνομα</span><span class="value">@Model.FirstName</span></li>
+                            <li><span class="title">Επώνυμο</span><span class="value">@Model.LastName</span></li>
+                            <li><span class="title">Διεύθυνση</span><span class="value">@Model.CompleteAddress</span></li>
+                            <li><span class="title">Δήμος</span><span class="value">@Model.County</span></li>
+                            <li><span class="title">Τηλέφωνο</span><span class="value">@Model.Phone</span></li>
+                            <li><span class="title">e-mail</span><span class="value">@Model.Email</span></li>
+                            @Html.HiddenFor(c => c.CitizenId)
+                            @Html.HiddenFor(c => c.Password)
+                        }
+                    </ul>
+                </div>
+                    <div class="col-sm-6 col-md-6 col-lg-6 subpage-block">
+                        <div class="new-pass ">
+                            <strong>Αλλάγη κωδικού </strong><a href="#change_pass_form2" data-toggle="collapse" class="effect info">Για να αλλάξεις τον κωδικό σου πάτησε έδω</a>
+                        </div><!-- .new pass-->
+                        @if (!(@Model.CitizenId == "0"))
+                        {
+                            <div id="change_pass_form2" class="collapse">
+                                @*<form class="js-paybill-form login-form" method="post" action="@Url.Action("UpdateCitizenPassword", "Home")">*@
+                                <div class="form-group ">
+                                    <label for="pass">Τρέχον Κωδικός *</label>
+                                    @Html.TextBoxFor(m => m.TypedCurrentPassword, new { @placeholder = "Ο τρέχον σας κωδικός *", @style = "height:40PX;", @class = "form-control", @type = "password" })
+                              
+                                    
+    @*<input type="text" id="old_pass" class="form-control" placeholder="Ο τρέχον σας κωδικός *" style="height:40PX;">*@
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Νέος Κωδικός*</label>
+                                    @Html.TextBoxFor(m => m.NewPassword, new { @placeholder = "Ο Καινούριος σας κωδικός *", @style = "height:40PX;", @class = "form-control", @type = "password" })
+                                    @*<input type="password" id="password" class="form-control" placeholder="Ο Καινούριος σας κωδικός *" style="height:40PX;">*@
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Επιβεβαίωση Νέου Κωδικού*</label>
+                                    @Html.TextBoxFor(m => m.VerifyNewPassword, new { @placeholder = "Επιβεβαίωση του νέου σας κωδικού *", @style = "height:40PX;", @class = "form-control", @type = "password" })
+                                    @*<input type="password" id="newpassword" class="form-control" placeholder="Επιβεβαίωση του νέου σας κωδικού *" style="height:40PX;">*@
+                                </div>
+                                <div class="form-group ">
+                                    @*Anti-forgery Tokens for security in 2 steps. The 1st in next line before button and the 2nd to controller*@
+                                    @Html.AntiForgeryToken()
+                                    <input type="submit" value="Αλλαγή κωδικού" class="btn btn-default login-inner-btn" />
+                                </div>
+                                @*</form>*@                            
+                            </div>
+                            <ul class="info-list">
+                                @if (@Model.PasswordResult == 1)
+                                {
+                                    <li><span class="title">Ο τρέχον κωδικός πρόσβασης δεν συμφωνεί με αυτόν που πληκτρολογήσατε</span></li>
+                                }
+                                @if (@Model.PasswordResult == 2)
+                                {
+                                    <li><span class="title">Δεν συμφωνεί ο νέος κωδικός πρόσβασης με την επιβεβαίωση</span></li>
+                                }
+                                @if (@Model.PasswordResult == 3)
+                                {
+                                    <li><span class="title">Η αλλαγή του κωδικού πρόσβασης πραγματοποιήθηκε με επιτυχία</span></li>
+                                }
+                            </ul>
+                        }
+                    </div>
+</div>
+        </div>
+    </section>
+
+
+}
+=======
+
+<section class="pt-page pt-page-2 pt-page-current" data-id="about_me">
+    <div class="border-block-top-110"></div>
+    <div class="section-inner">
+        <div class="app-logo"><img src="~/images/logo2.png" class="img-responsive" /></div>
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-6 subpage-block">
+                <h4 class="my-info">Προσωπικα στοιχεια</h4>
+                <ul class="info-list">
+                    @if ((@Model.CitizenId == "0"))
+                    {
+                        <li><span class="title">Δεν βρέθηκε πολίτης με αυτά τα στοιχεία</span></li>
+                    }
+                    else
+                    {
+                        <li><span class="title">ΑΦΜ</span><span class="value">@Model.CitizenId</span></li>
+                        <li><span class="title">Όνομα</span><span class="value">@Model.FirstName</span></li>
+                        <li><span class="title">Επώνυμο</span><span class="value">@Model.LastName</span></li>
+                        <li><span class="title">Διεύθυνση</span><span class="value">@Model.CompleteAddress</span></li>
+                        <li><span class="title">Δήμος</span><span class="value">@Model.County</span></li>
+                        <li><span class="title">Τηλέφωνο</span><span class="value">@Model.Phone</span></li>
+                        <li><span class="title">e-mail</span><span class="value">@Model.Email</span></li>
+                        @Html.HiddenFor(c => c.CitizenId)
+                        @Html.HiddenFor(c => c.Password)
+                    }
+                </ul>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6 subpage-block">
+                <div class="new-pass ">
+                    <strong>Αλλάγη κωδικού </strong><a href="#change_pass_form2" data-toggle="collapse" class="effect info">Για να αλλάξεις τον κωδικό σου πάτησε έδω</a>
+                </div><!-- .new pass-->
+                @if (!(@Model.CitizenId == "0"))
+                {
+                    @*Create action UpdatePassword in Home Controller *@
+                    @*@using (Html.BeginForm("UpdateCitizenPassword", "Citizens"))
+
+                    {*@
+                        <div id="change_pass_form2" class="collapse">
+                            @*<form action="#!" method="POST" class="login-form">*@
+                            <form class="js-paybill-form login-form" method="post" action="@Url.Action("UpdateCitizenPassword", "Home")">
+                                    <div class="form-group ">
+                                        <label for="pass">Τρέχον Κωδικός *</label>
+                                        @Html.TextBoxFor(m => m.TypedCurrentPassword, new { @placeholder = "Ο τρέχον σας κωδικός *", @style = "height:40PX;", @class = "form-control" })
+                                        @*<input type="text" id="old_pass" class="form-control" placeholder="Ο τρέχον σας κωδικός *" style="height:40PX;">*@
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Νέος Κωδικός*</label>
+                                        @Html.TextBoxFor(m => m.NewPassword, new { @placeholder = "Ο Καινούριος σας κωδικός *", @style = "height:40PX;", @class = "form-control" })
+                                        @*<input type="password" id="password" class="form-control" placeholder="Ο Καινούριος σας κωδικός *" style="height:40PX;">*@
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Επιβεβαίωση Νέου Κωδικού*</label>
+                                        @Html.TextBoxFor(m => m.VerifyNewPassword, new { @placeholder = "Επιβεβαίωση του νέου σας κωδικού *", @style = "height:40PX;", @class = "form-control" })
+                                        @*<input type="password" id="newpassword" class="form-control" placeholder="Επιβεβαίωση του νέου σας κωδικού *" style="height:40PX;">*@
+                                    </div>
+                                    <div class="form-group ">
+                                        @*Anti-forgery Tokens for security in 2 steps. The 1st in next line before button and
+                        the 2nd to controller*@
+                                        @Html.AntiForgeryToken()
+                                        <input type="submit" value="Αλλαγή κωδικού" class="btn btn-default login-inner-btn" />
+                                    </div>
+                                </form>
+                        </div>
+                    //}
+                }
+        </div>
+    </div>
+</div>
+</section>
+>>>>>>> 0319a9afc0cf2301d18d1f186e09b3802ec68962
